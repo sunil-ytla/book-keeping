@@ -1,0 +1,21 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "[python]":{
+
+    },
+    "pylint.enabled": true,
+    "pylint.args": ["--disable=wrong-import-position"],
+    "black-formatter.args": [
+        "--config ${workspaceFolder}"
+    ],
+    "editor.rulers": [
+        // {
+        //     "color": "#ADD8E6",
+        //     "column": 88
+        // },
+        {
+            "column": 88,
+        }
+    ],
+    "ruff.configuration": "/production_python_udemy/ruff.toml"
+}

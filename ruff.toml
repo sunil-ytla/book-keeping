@@ -1,0 +1,67 @@
+[lint]
+# 1. Enable flake8-bugbear (`B`) rules, in addition to the defaults.
+
+
+# ERA -> for commented out code
+# FAST -> FastApi issues
+# ANN -> Annotations
+# ASYNC -> asyncio library
+# S -> flask8-bandit for safety of code
+# FBT -> flake8-boolean-trap https://www.youtube.com/watch?v=91RBUmbNL1U&t=177s
+# B -> flake-8 Bug bear
+# A -> Builtin shadowing
+# FIX -> flake8-fixme
+# ICN -> flake8-import-conventions
+# LOG -> flake8-logging
+# ARG -> flake8-unused-arguments on PyPI.
+# I -> Isort
+# C90 -> mccabe code quality
+# NPY -> numpy
+# PD -> Pandas
+# N -> pep8-naming
+# PERF -> Perflint
+# DOC -> Docs checking (pydoclint)
+# F -> Pyflakes (A simple program which checks Python source files for errors.)
+# PL -> pylint
+# RUF -> ruff specific rules
+select = [
+    "E4",
+    "E5",
+    "E7",
+    "E9",
+    "F",
+    "B",
+    "ANN",
+    "PERF",
+    "N",
+    "ERA",
+    "S",
+    "A",
+    "FIX",
+    "PL",
+    "RUF",
+    "PD",
+    "C90",
+    "I",
+    "FIX",
+    "ICN",
+    "FBT",
+    "ASYNC",
+    "FAST",
+    "ERA"
+]
+
+# 2. Avoid enforcing line-length violations (`E501`)
+# ignore = ["E501", "F401"]
+
+# 3. Avoid trying to fix flake8-bugbear (`B`) violations.
+unfixable = ["B"]
+
+# 4. Ignore `E402` (import violations) in all `__init__.py` files, and in selected subdirectories.
+[lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"**/{tests,docs,tools}/*" = ["E402"]
+
+[format]
+# 5. Use single quotes in `ruff format`.
+quote-style = "single"
